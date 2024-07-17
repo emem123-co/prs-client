@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UserService } from '../user.service';
 import { User } from '../user.class';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-list',
@@ -9,14 +9,15 @@ import { User } from '../user.class';
 })
 export class UserListComponent {
 
+  users: User[] = []; //saving into local variable.
+  
+  constructor(
+    private usrsvc: UserService
+    ){}
+    
   componentTitle = "User List";
-  createRoute = '/user/create';
+  createRoute = '/user/create'; 
 
-    users: User[] = []; //saving into local variable.
-
-    constructor( private usrsvc: UserService ){
-
-    }
 
     ngOnInit(): void {
       this.usrsvc.list().subscribe({
@@ -28,4 +29,4 @@ export class UserListComponent {
         }
       })
     }
-}
+}//end of UserListComponent

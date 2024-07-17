@@ -1,0 +1,23 @@
+<div id="main">
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="2" class="fw-bold fst-italic">Login</td>
+            </tr>
+            <tr>
+                <th>User name:</th>
+                <td><input [(ngModel)]="username" autocomplete="username"/></td>
+            </tr>
+            <tr>
+                <th>Password:</th>
+                <td><input [(ngModel)]="password" type="password"/></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="text-danger fw-bold">{{message }}&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button (click)="login()" class="btn btn-primary">Login</button>
+    </div>
+</div>

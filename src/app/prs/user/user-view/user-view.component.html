@@ -1,0 +1,57 @@
+<div>
+    <app-menu />
+    <h3>User View</h3>
+
+    <main>
+        <a routerLink="/user/create">Create New</a>
+
+        <table class ="table table-sm">
+            <tbody>
+                <tr>
+                    <td>Id</td>
+                    <td><input [(ngModel)]="user.id" disabled /></td>
+                </tr>
+                <tr>
+                    <td>Lastname</td>
+                    <td><input [(ngModel)]="user.lastName" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Firstname</td>
+                    <td><input [(ngModel)]="user.firstName" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>USername</td>
+                    <td><input [(ngModel)]="user.username" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr [hidden] ="isHidden">
+                    <td>Password</td>
+                    <td><input [(ngModel)]="user.password" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td><input [(ngModel)]="user.phone" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input [(ngModel)]="user.email" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Reviewer?</td>
+                    <td><input [(ngModel)]="user.isReviewer" type="checkbox" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Admin?</td>
+                    <td><input [(ngModel)]="user.isAdmin" typer="checkbox" [disabled]="isReadonly" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <button (click)="toggleVerifyRemove()" class="btn btn-danger">Delete
+                <span *ngIf="verifyRemove">
+                        <span> | </span>
+                        <button (click)="remove()" class="btn btn-danger">Verify Delete</button>
+                </span>
+            </button>
+        </div>
+    </main>
+</div>

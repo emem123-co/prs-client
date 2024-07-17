@@ -1,0 +1,51 @@
+<div>
+    <app-menu />
+    <h3> User Create </h3>
+
+    <main>
+        <table class="table table-sm">
+            <tbody>
+                <tr>
+                    <td>Id</td>
+                    <td><input [(ngModel)]="user.id" disabled /></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input [(ngModel)]="user.lastName" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td><input [(ngModel)]="user.firstName" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td><input [(ngModel)]="user.username" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr [hidden] ="isHidden">
+                    <td>Password</td>
+                    <td><input [(ngModel)]="user.password" type="password" /></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td><input [(ngModel)]="user.phone" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input [(ngModel)]="user.email" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Reviewer?</td>
+                    <td><input [(ngModel)]="user.isReviewer" type="checkbox" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Admin?</td>
+                    <td><input [(ngModel)]="user.isAdmin" type="checkbox" [disabled]="isReadonly" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <button (click)="save()" class="btn btn-danger">Save
+            </button>
+        </div>
+    </main>
+</div>>
