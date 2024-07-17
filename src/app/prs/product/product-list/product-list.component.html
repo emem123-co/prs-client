@@ -1,0 +1,36 @@
+<div>
+   <app-menu />
+   <h3>Product List</h3>
+
+   <main>
+       <a routerLink="/product/create">Create New</a>
+       <table class="table table-sm table-striped">
+           <thead>
+               <tr>
+                   <th>Id</th>
+                   <th>PartNbr</th>
+                   <th>Name</th>
+                   <th>Price</th>
+                   <th>Unit</th>
+                   <th>Vendor</th>
+                   <th>Actions</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr *ngFor="let product of products">
+                   <td>{{ product.id }}</td>
+                   <td>{{ product.partNbr }}</td>
+                   <td>{{ product.name }}</td>
+                   <td>{{ product.price | currency }}</td>
+                   <td>{{ product.unit }}</td>
+                   <td>{{ product.vendor?.name}}</td>
+                   <td>
+                       <a routerLink="/product/view/{{ product.id }}">View</a>
+                       <span> | </span>
+                       <a routerLink="/product/change/{{ product.id }}">Change</a>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+   </main>
+</div>

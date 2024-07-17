@@ -1,0 +1,47 @@
+<p>request-change works!</p>
+<div>
+   <app-menu />
+   <h3>Request Create</h3>
+
+   <main>
+       <table class="table table-sm">
+           <tbody>
+               <tr>
+                   <td>Id</td>
+                   <td><input [(ngModel)]="request.id" disabled /></td>
+               </tr>
+               <tr>
+                   <td>Description</td>
+                   <td><input [(ngModel)]="request.description" [disabled]="isReadonly" /></td>
+               </tr>
+               <tr>
+                   <td>Justification</td>
+                   <td><input [(ngModel)]="request.justification" [disabled]="isReadonly" /></td>
+               </tr>
+               <tr hidden>
+                   <td>Rejection Reason</td>
+                   <td><input [(ngModel)]="request.rejectionReason" [disabled]="isReadonly" /></td>
+               </tr>
+               <tr>
+                   <td>Delivery Mode</td>
+                   <td><input [(ngModel)]="request.deliveryMode" [disabled]="isReadonly" /></td>
+               </tr>
+               <tr>
+                   <td>Status</td>
+                   <td><input [(ngModel)]="request.status" disabled /></td>
+               </tr>
+               <tr>
+                   <td>Total</td>
+                   <td><input [(ngModel)]="request.total" disabled /></td>
+               </tr>
+               <tr>
+                   <td>Username</td>
+                   <td><input [ngModel]="request.user?.username" disabled /></td>
+               </tr>
+           </tbody>
+       </table>
+       <div>
+           <button (click)="save()" class="btn btn-primary">Save</button>
+       </div>
+   </main>
+</div>

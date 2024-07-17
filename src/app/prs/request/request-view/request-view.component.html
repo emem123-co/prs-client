@@ -1,0 +1,51 @@
+<p>request-view works!</p>
+<div>
+   <app-menu />
+   <h3>Request View</h3>
+
+   <main>
+       <table class="table table-sm">
+           <tbody>
+               <tr>
+                   <td>Id</td>
+                   <td><input [(ngModel)]="request.id" disabled /></td>
+               </tr>
+               <tr>
+                   <td>Description</td>
+                   <td><input [(ngModel)]="request.description" [disabled]="isReadonly" /></td>
+               </tr>
+               <tr>
+                   <td>Justification</td>
+                   <td><input [(ngModel)]="request.justification" [disabled]="isReadonly" /></td>
+               </tr>
+               <tr *ngIf="request.rejectionReason" class="text-danger fw-bold">
+                   <td>Rejection Reason</td>
+                   <td><input [(ngModel)]="request.rejectionReason" [disabled]="isReadonly" /></td>
+               </tr>
+               <tr>
+                   <td>Delivery Mode</td>
+                   <td><input [(ngModel)]="request.deliveryMode" type="password" [disabled]="isReadonly" /></td>
+               </tr>
+               <tr>
+                   <td>Status</td>
+                   <td><input [(ngModel)]="request.status" [disabled]="isReadonly" /></td>
+               </tr>
+               <tr>
+                   <td>Total</td>
+                   <td><input [(ngModel)]="request.total" [disabled]="isReadonly" /></td>
+               </tr>
+               <tr>
+                   <td>Username</td>
+                   <td><input [ngModel]="request.user?.username" [disabled]="isReadonly" /></td>
+               </tr>
+           </tbody>
+       </table>
+       <div>
+           <button (click)="toggleVerifyRemove()" class="btn btn-danger">Delete</button>
+           <span *ngIf="verifyRemove">
+               <span> | </span>
+               <button (click)="remove()" class="btn btn-danger">Verify Delete</button>
+           </span>
+       </div>
+   </main>
+</div>
