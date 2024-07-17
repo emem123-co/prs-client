@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 import { provideHttpClient } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -29,6 +27,11 @@ import { VendorChangeComponent } from './prs/vendor/vendor-change/vendor-change.
 import { VendorCreateComponent } from './prs/vendor/vendor-create/vendor-create.component';
 import { VendorViewComponent } from './prs/vendor/vendor-view/vendor-view.component';
 
+import { RequestViewComponent } from './prs/request/request-view/request-view.component';
+import { RequestListComponent } from './prs/request/request-list/request-list.component';
+import { RequestCreateComponent } from './prs/request/request-create/request-create.component';
+import { RequestChangeComponent } from './prs/request/request-change/request-change.component';
+
 @NgModule({
   declarations:
   [ AppComponent,
@@ -53,7 +56,12 @@ import { VendorViewComponent } from './prs/vendor/vendor-view/vendor-view.compon
     ProductViewComponent,
     ProductListComponent,
     ProductCreateComponent,
-    ProductChangeComponent
+    ProductChangeComponent,
+    
+    RequestViewComponent,
+    RequestListComponent,
+    RequestCreateComponent,
+    RequestChangeComponent 
     
   ],
 

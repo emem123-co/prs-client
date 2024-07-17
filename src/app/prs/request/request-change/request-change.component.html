@@ -1,4 +1,3 @@
-<p>request-change works!</p>
 <div>
    <app-menu />
    <h3>Request Create</h3>
@@ -18,9 +17,9 @@
                    <td>Justification</td>
                    <td><input [(ngModel)]="request.justification" [disabled]="isReadonly" /></td>
                </tr>
-               <tr hidden>
-                   <td>Rejection Reason</td>
-                   <td><input [(ngModel)]="request.rejectionReason" [disabled]="isReadonly" /></td>
+               <tr *ngIf="request.rejectionReason">
+                   <td class="text-danger fw-bold">Rejection Reason</td>
+                   <td><input [(ngModel)]="request.rejectionReason" class="text-danger fw-bold" [disabled]="isReadonly" /></td>
                </tr>
                <tr>
                    <td>Delivery Mode</td>

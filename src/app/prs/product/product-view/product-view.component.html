@@ -1,48 +1,48 @@
 <div>
-   <app-menu />
-   <h3>Product View</h3>
+    <app-menu />
+    <h3>Product View</h3>
 
-   <main>
-       <table class="table table-sm">
-           <tbody>
-               <tr>
-                   <td>Id</td>
-                   <td><input [(ngModel)]="product.id" disabled /></td>
-               </tr>
-               <tr>
-                   <td>Part Nbr</td>
-                   <td><input [(ngModel)]="product.partNbr" [disabled]="isReadonly" /></td>
-               </tr>
-               <tr>
-                   <td>Name</td>
-                   <td><input [(ngModel)]="product.name" [disabled]="isReadonly" /></td>
-               </tr>
-               <tr>
-                   <td>Price</td>
-                   <td><input [(ngModel)]="product.price" [disabled]="isReadonly" /></td>
-               </tr>
-               <tr>
-                   <td>Unit</td>
-                   <td><input [(ngModel)]="product.unit" [disabled]="isReadonly" /></td>
-               </tr>
-               <tr>
-                   <td>Photo Path</td>
-                   <td><input [(ngModel)]="product.photoPath" [disabled]="isReadonly" /></td>
-               </tr>
-               <tr>
-                   <td>Vendor</td>
-                   <td><select [(ngModel)]="product.vendorId" [disabled]="isReadonly" >
-                       <option *ngFor="let vendor of vendors" [value]="vendor.id">{{ vendor.name }}</option>
-                   </select></td>
-               </tr>
-           </tbody>
-       </table>
-       <div>
-           <button (click)="toggleVerifyRemove()" class="btn btn-danger">Delete</button>
-           <span *ngIf="verifyRemove">
-               <span> | </span>
-               <button (click)="remove()" class="btn btn-danger">Verify Delete</button>
-           </span>
-       </div>
-   </main>
+    <main>
+        <table class="table table-sm">
+            <tbody>
+                <tr>
+                    <td>Id</td>
+                    <td><input [(ngModel)]="product.id" disabled /></td>
+                </tr>
+                <tr>
+                    <td>Part Nbr</td>
+                    <td><input [(ngModel)]="product.partNbr" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input [(ngModel)]="product.name" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td><input [(ngModel)]="product.price" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Unit</td>
+                    <td><input [(ngModel)]="product.unit" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Photo Path</td>
+                    <td><input [(ngModel)]="product.photoPath" [disabled]="isReadonly" /></td>
+                </tr>
+                <tr>
+                    <td>Vendor</td>
+                    <td><select [(ngModel)]="product.vendorId" [disabled]="isReadonly" >
+                        <option *ngFor="let vendor of vendors" [value]="vendor.id">{{ vendor.name }}</option>
+                    </select></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <button (click)="toggleVerifyRemove()" class="btn btn-danger">Delete</button>
+            <span *ngIf="verifyRemove">
+                <span> | </span>
+                <button (click)="remove()" class="btn btn-danger">Verify Delete</button>
+            </span>
+        </div>
+    </main>
 </div>
