@@ -34,7 +34,9 @@ export class RequestCreateComponent {
   }
 
   ngOnInit(): void {
-    this.sys.checkLogin();
+    if(this.sys.loggedInUser == null) {
+      this.router.navigateByUrl("/user/login");
+    }
     console.warn("Request.UserId is being auto loaded!")
     this.request.userId = this.sys.loggedInUser?.id ?? 1;
   }

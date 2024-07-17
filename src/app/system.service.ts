@@ -10,8 +10,8 @@ export class SystemService {
 
   constructor() { }
 
-  checkLogin() {
+ /*  checkLogin() {
     if(this.loggedInUser?.id == null)
 
-  }
+  } */
 }
