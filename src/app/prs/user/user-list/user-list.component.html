@@ -1,0 +1,36 @@
+<div>
+    <h3>User List</h3>
+
+    <main>
+        <a routerLink="/user/create">Create New</a>
+        <table class="table table-sm table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Username</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Reviewer?</th>
+                    <th>Admin?</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody><tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>>
+                <td>{{ user.lastName }}</td>>
+                <td>{{ user.firstName }}</td>>
+                <td>{{ user.username }}</td>>
+                <td>{{ user.phone }}</td>>
+                <td>{{ user.email }}</td>>
+                <td>{{ user.isReviewer ? "Yes" : "No" }}</td>>
+                <td>{{ user.isAdmin ? "Yes" : "No" }}</td>>
+                <td>
+                    <a routerLink="/user/view/{{ user.id}}">View</a>
+                    <span> | </span>
+                </td>
+            </tr></tbody>
+        </table>
+    </main>
+</div>
