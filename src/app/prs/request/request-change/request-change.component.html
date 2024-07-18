@@ -1,6 +1,6 @@
 <div>
    <app-menu />
-   <h3>Request Create</h3>
+   <h3>Request Change</h3>
 
    <main>
        <table class="table table-sm">
@@ -35,10 +35,12 @@
                </tr>
                <tr>
                    <td>Username</td>
-                   <td><input [ngModel]="request.user?.username" disabled /></td>
+                   <td><input [ngModel]="request.user?.username" disabled /></td> <!-- get this to match the Username
+                   associated with the request-->
                </tr>
            </tbody>
        </table>
+         <!-- put requestlines here (by id) with ability to add a line or edit existing -->
        <div>
            <button (click)="save()" class="btn btn-primary">Save</button>
        </div>

@@ -23,7 +23,7 @@
                </tr>
                <tr>
                    <td>Delivery Mode</td>
-                   <td><input [(ngModel)]="request.deliveryMode" type="password" [disabled]="isReadonly" /></td>
+                   <td><input [(ngModel)]="request.deliveryMode" [disabled]="isReadonly" /></td>
                </tr>
                <tr>
                    <td>Status</td>
@@ -35,7 +35,8 @@
                </tr>
                <tr>
                    <td>Username</td>
-                   <td><input [ngModel]="request.user?.username" [disabled]="isReadonly" /></td>
+                   <td><input [ngModel]="request.user?.username" [disabled]="isReadonly" /></td> <!--get this to match the username 
+                   associated with the request-->
                </tr>
            </tbody>
        </table>
@@ -46,5 +47,6 @@
                <button (click)="remove()" class="btn btn-danger">Verify Delete</button>
            </span>
        </div>
+       <!-- put requestlines here (by id), view only. -->
    </main>
 </div>

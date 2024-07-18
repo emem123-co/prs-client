@@ -36,10 +36,12 @@
                </tr>
                <tr>
                    <td>Username</td>
-                   <td><input [ngModel]="request.user?.username" disabled /></td>
+                   <td><input [ngModel]="request.user?.username" disabled /></td> <!-- get this to autofill 
+                   with username currently logged in-->
                </tr>
            </tbody>
        </table>
+       <!-- include empty requestlines here to add to the request that the user is creating-->
        <div>
            <button (click)="save()" class="btn btn-primary">Save</button>
        </div>

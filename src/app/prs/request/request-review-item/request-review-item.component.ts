@@ -23,6 +23,7 @@ export class RequestReviewItemComponent {
     private reqlsvc: RequestlineService,
     private route: ActivatedRoute,
     private router: Router
+
   ) {}
 
   approve(): void {

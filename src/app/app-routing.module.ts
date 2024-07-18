@@ -34,7 +34,8 @@ import { RequestlineCreateComponent } from './prs/requestline/requestline-create
 import { RequestlineChangeComponent } from './prs/requestline/requestline-change/requestline-change.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "/user/list", pathMatch: "full"},
+  { path: '', redirectTo: "/user/login", pathMatch: "full"},
+
   { path: "user/list", component: UserListComponent },
   { path: "user/view/{id}", component: UserViewComponent},
   { path: "user/create", component: UserCreateComponent},
@@ -44,30 +45,31 @@ const routes: Routes = [
   { path: "home", component: HomeComponent},
   { path: "about", component: AboutComponent},
 
-  { path: "**", component: E404Component },
-
+  
   { path: "request/list", component: RequestListComponent },
   { path: "request/create", component: RequestCreateComponent },
   { path: "request/view/:id", component: RequestViewComponent },
   { path: "request/change/:id", component: RequestChangeComponent },
-  { path: "request/reviews", component: RequestReviewsComponent },
+  { path: "request/review", component: RequestReviewsComponent },
   { path: "request/lines/:id", component: RequestLinesComponent },
   { path: "request/review/item/:id", component: RequestReviewItemComponent },
-
+  
   { path: "requestline/create/:rid", component: RequestlineCreateComponent },
   { path: "requestline/change/:id", component: RequestlineChangeComponent },
-
+  
   { path: "product/create", component: ProductCreateComponent},
   { path: "product/change", component: ProductChangeComponent},
   { path: "product/view", component: ProductViewComponent},
   { path: "product/list", component: ProductListComponent},
-
+  
   { path: "vendor/create", component: VendorCreateComponent},
   { path: "vendor/change", component: VendorChangeComponent},
   { path: "vendor/view", component: VendorViewComponent},
-  { path: "vendor/list", component: VendorListComponent}
+  { path: "vendor/list", component: VendorListComponent},
+
+  { path: "**", component: E404Component }
 ];
-  
+
   @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
