@@ -66,6 +66,9 @@ export class RequestReviewItemComponent {
 
   ngOnInit(): void {
     this.sys.checkLogin();
+    this.reqlsvc.get(this.request.id);
     this.refresh();
   }
+
+  
 }

@@ -8,7 +8,7 @@ import { Menu } from '../menu.class';
 })
 export class MenuComponent {
   
-  menus: Menu [] = [
+  menus= [
     new Menu("Home", "/home"), /*need redirect to requests page*/
     new Menu("User", "/user/list"), /*gtg, just need view and change*/
     new Menu("Vendor", "/vendor/list"), /*gtg, just need view and change*/

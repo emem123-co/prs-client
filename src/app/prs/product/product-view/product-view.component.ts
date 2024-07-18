@@ -58,6 +58,7 @@ export class ProductViewComponent {
           console.error(err);
         }
       })
+      
       let id = this.route.snapshot.params["id"];
       console.log("ID is ", id);
       this.pdctsvc.get(id).subscribe({

@@ -25,7 +25,7 @@ export class UserLoginComponent {
         next: (res) => {
           console.log("Login successful!");
           this.sys.loggedInUser = res;
-          this.router.navigateByUrl("/user/list");
+          this.router.navigateByUrl("/request/list");
         },
       error: (err) => {
         if(err.status == 404) {

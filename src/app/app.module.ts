@@ -72,8 +72,8 @@ import { RequestReviewsComponent } from './prs/request/request-reviews/request-r
     RequestlineCreateComponent,
     RequestlineChangeComponent,
     RequestLinesComponent,
-    RequestReviewItemComponent,
-    RequestReviewsComponent 
+    RequestReviewsComponent,
+    RequestReviewItemComponent
     
   ],
 

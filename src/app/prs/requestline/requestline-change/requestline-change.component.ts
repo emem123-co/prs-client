@@ -27,7 +27,7 @@ export class RequestlineChangeComponent {
   ) {}
 
   save(): void {
-    //this.requestline.productId = Number(this.requestline.productId);
+    this.requestline.productId = Number(this.requestline.productId);
     this.reqlsvc.change(this.requestline).subscribe({
       next: (res) => {
         console.log("Requestline changed successfully!");

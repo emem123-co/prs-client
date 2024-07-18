@@ -10,6 +10,8 @@ export class UserService {
 
 baseurl: string = "http://localhost:5000/api/users"
 
+  users: User[] =[];
+
   constructor( private http: HttpClient ) { }
 
   login (userName: string, password: string): Observable<User> {

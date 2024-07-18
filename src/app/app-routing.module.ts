@@ -37,10 +37,10 @@ const routes: Routes = [
   { path: '', redirectTo: "/user/login", pathMatch: "full"},
 
   { path: "user/list", component: UserListComponent },
-  { path: "user/view/{id}", component: UserViewComponent},
   { path: "user/create", component: UserCreateComponent},
   { path: "user/login", component: UserLoginComponent},
-  { path: "user/change/{id}", component: UserChangeComponent},
+  { path: "user/view/:id", component: UserViewComponent},
+  { path: "user/change/:id", component: UserChangeComponent},
 
   { path: "home", component: HomeComponent},
   { path: "about", component: AboutComponent},
@@ -58,14 +58,14 @@ const routes: Routes = [
   { path: "requestline/change/:id", component: RequestlineChangeComponent },
   
   { path: "product/create", component: ProductCreateComponent},
-  { path: "product/change", component: ProductChangeComponent},
-  { path: "product/view", component: ProductViewComponent},
+  { path: "product/change:id", component: ProductChangeComponent},
+  { path: "product/view/:id", component: ProductViewComponent},
   { path: "product/list", component: ProductListComponent},
   
-  { path: "vendor/create", component: VendorCreateComponent},
-  { path: "vendor/change", component: VendorChangeComponent},
-  { path: "vendor/view", component: VendorViewComponent},
   { path: "vendor/list", component: VendorListComponent},
+  { path: "vendor/create", component: VendorCreateComponent},
+  { path: "vendor/view/:id", component: VendorViewComponent},
+  { path: "vendor/change:id", component: VendorChangeComponent},
 
   { path: "**", component: E404Component }
 ];
