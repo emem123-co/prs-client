@@ -31,10 +31,12 @@ import { RequestViewComponent } from './prs/request/request-view/request-view.co
 import { RequestListComponent } from './prs/request/request-list/request-list.component';
 import { RequestCreateComponent } from './prs/request/request-create/request-create.component';
 import { RequestChangeComponent } from './prs/request/request-change/request-change.component';
-import { RequestlineViewComponent } from './prs/requestline/requestline-view/requestline-view.component';
-import { RequestlineListComponent } from './prs/requestline/requestline-list/requestline-list.component';
+
 import { RequestlineCreateComponent } from './prs/requestline/requestline-create/requestline-create.component';
 import { RequestlineChangeComponent } from './prs/requestline/requestline-change/requestline-change.component';
+import { RequestLinesComponent } from './prs/request/request-lines/request-lines.component';
+import { RequestReviewItemComponent } from './prs/request/request-review-item/request-review-item.component';
+import { RequestReviewsComponent } from './prs/request/request-reviews/request-reviews.component';
 
 @NgModule({
   declarations:
@@ -66,10 +68,12 @@ import { RequestlineChangeComponent } from './prs/requestline/requestline-change
     RequestListComponent,
     RequestCreateComponent,
     RequestChangeComponent,
-    RequestlineViewComponent,
-    RequestlineListComponent,
+    
     RequestlineCreateComponent,
-    RequestlineChangeComponent 
+    RequestlineChangeComponent,
+    RequestLinesComponent,
+    RequestReviewItemComponent,
+    RequestReviewsComponent 
     
   ],
 

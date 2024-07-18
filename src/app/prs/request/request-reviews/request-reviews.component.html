@@ -1,0 +1,33 @@
+<div>
+   <app-menu />
+   <h3>Request List for review</h3>
+
+   <main>
+       <table class="table table-sm table-striped">
+           <thead>
+               <tr>
+                   <th>Id</th>
+                   <th>Description</th>
+                   <th>Justification</th>
+                   <th>Status</th>
+                   <th>Total</th>
+                   <th>Username</th>
+                   <th>Actions</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr *ngFor="let request of requests">
+                   <td>{{ request.id }}</td>
+                   <td>{{ request.description }}</td>
+                   <td>{{ request.justification }}</td>
+                   <td>{{ request.status }}</td>
+                   <td>{{ request.total | currency}}</td>
+                   <td>{{ request.user?.username }}</td>
+                   <td>
+                       <a routerLink="/request/review/item/{{ request.id }}">Review</a>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+   </main>
+</div>

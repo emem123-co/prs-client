@@ -1,0 +1,60 @@
+<div>
+   <app-menu />
+   <h3>Request Lines</h3>
+
+   <main>
+       <table class="table table-sm table-striped">
+           <thead>
+               <tr>
+                   <th>Id</th>
+                   <th>Description</th>
+                   <th>Justification</th>
+                   <th>Status</th>
+                   <th>Total</th>
+                   <th>Username</th>
+                   <th>Actions</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr>
+                   <td>{{ request.id }}</td>
+                   <td>{{ request.description }}</td>
+                   <td>{{ request.justification }}</td>
+                   <td>{{ request.status }}</td>
+                   <td>{{ request.total | currency}}</td>
+                   <td>{{ request.user?.username }}</td>
+                   <td>
+                       <a (click)="review()" class="pointer text-primary">Submit</a>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+       <a routerLink="/requestline/create/{{ request.id }}">Create New</a>
+       <table class="table table-sm table-striped">
+           <thead>
+               <tr>
+                   <th>Id</th>
+                   <th>Product</th>
+                   <th>Quantity</th>
+                   <th>Price</th>
+                   <th>Line Total</th>
+                   <th>Actions</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr *ngFor="let rl of request.requestlines">
+                   <td>{{ rl.id }}</td>
+                   <td>{{ rl.product?.name ?? "null" }}</td>
+                   <td>{{ rl.quantity }}</td>
+                   <td>{{ rl.product?.price | currency }}</td>
+                   <td>{{ rl.product.price * rl.quantity | currency }}</td>
+                   <td>
+                       <button (click)="edit(rl)" class="btn btn-link">Change</button>
+                       <span> | </span>
+                       <button (click)="remove(rl)" class="btn btn-link">Remove</button>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+   </main>
+</div>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from './prs/user/user.class';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +9,15 @@ export class SystemService {
 
   loggedInUser: User | null = null;
 
-  constructor() { }
+  checkLogin(): void {
+    //console.warn("WARNING: Skipping CheckLogin()")
+    //return
+    if(this.loggedInUser == null) {
+      this.router.navigateByUrl("/user/login");
+    }
+  }
 
- /*  checkLogin() {
-    if(this.loggedInUser?.id == null)
-
-  } */
+  constructor(
+    private router: Router
+  ) { }
 }

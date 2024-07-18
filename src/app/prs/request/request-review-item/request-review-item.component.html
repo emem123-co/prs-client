@@ -1,0 +1,59 @@
+<div>
+   <app-menu />
+   <h3>Request Review Item</h3>
+
+   <main>
+       <table class="table table-sm table-striped">
+           <thead>
+               <tr>
+                   <th>Id</th>
+                   <th>Description</th>
+                   <th>Justification</th>
+                   <th>Status</th>
+                   <th>Total</th>
+                   <th>Username</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr>
+                   <td>{{ request.id }}</td>
+                   <td>{{ request.description }}</td>
+                   <td>{{ request.justification }}</td>
+                   <td>{{ request.status }}</td>
+                   <td>{{ request.total | currency}}</td>
+                   <td>{{ request.user?.username }}</td>
+               </tr>
+           </tbody>
+       </table>
+       <table class="table table-sm table-striped">
+           <thead>
+               <tr>
+                   <th>Id</th>
+                   <th>Product</th>
+                   <th>Quantity</th>
+                   <th>Price</th>
+                   <th>Line Total</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr *ngFor="let rl of request.requestlines">
+                   <td>{{ rl.id }}</td>
+                   <td>{{ rl.product?.name ?? "null" }}</td>
+                   <td>{{ rl.quantity }}</td>
+                   <td>{{ rl.product?.price | currency }}</td>
+                   <td>{{ rl.product.price * rl.quantity | currency }}</td>
+               </tr>
+           </tbody>
+       </table>
+       <div>
+           <div class="left">
+               <button (click)="approve()" class="btn btn-success">Approve</button>
+           </div>
+           <div class="right">
+               <input [(ngModel)]="request.rejectionReason" placeholder="Rejection Reason">
+               <span> | </span>
+               <button (click)="reject()" class="btn btn-danger" [disabled]="request.rejectionReason == null">Reject</button>
+           </div>
+       </div>
+   </main>
+</div>
